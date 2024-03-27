@@ -23,6 +23,7 @@ class SecondActivity : AppCompatActivity() {
         newPasswordEditText = findViewById(R.id.editTextNewPassword)
         saveButton = findViewById(R.id.buttonSave)
 
+        // Define um listener para habilitar ou desabilitar o botão "Salvar"
         val textWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
@@ -42,6 +43,7 @@ class SecondActivity : AppCompatActivity() {
             val newUsername = newUsernameEditText.text.toString().trim()
             val newPassword = newPasswordEditText.text.toString().trim()
 
+            // Retorna para a tela de login com o novo usuário e senha
             val resultIntent = Intent()
             resultIntent.putExtra("newUser", newUsername)
             resultIntent.putExtra("newPassword", newPassword)
